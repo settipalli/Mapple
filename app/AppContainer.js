@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Drawer, View } from 'native-base'
+import { Navigator } from 'react-native'
 
 export default class AppContainer extends Component {
   constructor(props) {
@@ -10,6 +11,8 @@ export default class AppContainer extends Component {
       theme: null   // over-arching theme file for native-base
     }
   }
+
+  // Drawer
 
   toggleDrawer() {
     this.state.toggled ? this._drawer.close() : this._drawer.open()
@@ -23,6 +26,22 @@ export default class AppContainer extends Component {
     this.setState({toggled: false})
   }
 
+
+  // Navigator
+
+  renderScene(route, navigator) {
+    switch(routes) {
+      default: {
+        return null
+      }
+    }
+  }
+
+  configureScene(route, routeStack) {
+    // handles how are scenes bought into the view
+    return Navigator.SceneConfigs.PushFromRight   // bring in the scene from right
+  }
+
   render() {
     return (
       <Drawer
@@ -32,7 +51,13 @@ export default class AppContainer extends Component {
         onClose={this.closeDrawer.bind(this)}
         onOpen={this.openDrawer.bind(this)}
         openDrawerOffset={0.2}
-      ></Drawer>
+      >
+        <Navigator
+          ref={(ref) => this._navigator = ref}
+          configureScene = {this.configureScene.bind(this)}
+          renderScene = {this.renderScene.bind(this )}
+        ></Navigator>
+      </Drawer>
     )
   }
 }
