@@ -1665,6 +1665,10 @@ find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
+firebase-nest@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/firebase-nest/-/firebase-nest-0.7.1.tgz#7ae7b4b68ce4b5240c0a9913726df7fe443807c3"
+
 firebase@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-4.3.0.tgz#21d95a92f862c7e406ddf871c173b50f153f8d46"
@@ -2910,6 +2914,10 @@ minimist@^1.1.0, minimist@^1.1.1, minimist@^1.2.0:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
+
+mobx-firebase-store@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/mobx-firebase-store/-/mobx-firebase-store-1.2.1.tgz#e24a8a99a22e74b8fc9538bbf761b6fad74d923d"
 
 mobx-react@^4.2.2:
   version "4.2.2"
