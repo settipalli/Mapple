@@ -18,7 +18,7 @@ export default class AppContainer extends Component {
     this.state = {
       toggled: false,
       // will hold all of our data stores
-      store: {
+      stores: {
         settings: settings,
         auth: authStore
       },
@@ -78,7 +78,7 @@ export default class AppContainer extends Component {
           initialRoute={{
             title: 'Splash',
             passProps: {
-              store: this.state.store,
+              stores: this.state.stores,
               toggleDrawer: this.toggleDrawer.bind(this),
               theme: this.state.theme
             }

@@ -9,16 +9,16 @@ export default class SplashScene extends Component {
 
   // over-ride react lifecycle code
   componentDidMount() {
-    const { store } = this.props   // we used ES6 syntax to pull it out of our properties
+    const { stores } = this.props   // we used ES6 syntax to pull it out of our properties
     // take in an anonymous function and within it, we will use our navigator to navigate
     // away from the splash screen when the time is up
     setTimeout(() => {
       this.props.navigator.replace({ title: "Login", passProps: this.props })
-    }, store.settings.SplashTime)
+    }, stores.settings.SplashTime)
   }
 
   render() {
-    const { settings } = this.props.store
+    const { settings } = this.props.stores
     const { theme } = this.props
     return (
         <View style={{ flex: 1 }}>
