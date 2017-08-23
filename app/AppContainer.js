@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Drawer, View } from 'native-base'
 import { Navigator } from 'react-native-deprecated-custom-components'
 
+import SideMenu from './components/SideMenu'
+
 export default class AppContainer extends Component {
   constructor(props) {
     super(props)
@@ -47,7 +49,7 @@ export default class AppContainer extends Component {
       <Drawer
         ref={(ref) => this._drawer = ref}
         type="displace"
-        content={<View style={{backgroundColor: "#000", height: 1000}} />}
+        content={<SideMenu navigator={this._navigator} theme={this.state.theme} />}
         onClose={this.closeDrawer.bind(this)}
         onOpen={this.openDrawer.bind(this)}
         openDrawerOffset={0.2}
