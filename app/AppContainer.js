@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Drawer, View } from 'native-base'
-import { Navigator } from 'react-native'
+import { Navigator } from 'react-native-deprecated-custom-components'
 
 export default class AppContainer extends Component {
   constructor(props) {
@@ -30,7 +30,7 @@ export default class AppContainer extends Component {
   // Navigator
 
   renderScene(route, navigator) {
-    switch(routes) {
+    switch(route) {
       default: {
         return null
       }
@@ -51,6 +51,8 @@ export default class AppContainer extends Component {
         onClose={this.closeDrawer.bind(this)}
         onOpen={this.openDrawer.bind(this)}
         openDrawerOffset={0.2}
+        panOpenMask={0.80}
+        captureGestures="open"
       >
         <Navigator
           ref={(ref) => this._navigator = ref}
