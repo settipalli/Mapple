@@ -5,10 +5,12 @@ import { Navigator } from 'react-native-deprecated-custom-components'
 import SideMenu from './components/SideMenu'
 import theme from './themes/theme'
 import SettingsStore from './stores/SettingsStore'
+import AuthStore from './stores/AuthStore'
 import SplashScene from './scenes/SplashScene'
 
 // instance of our settings store that would be passed around throught the app
 const settings = new SettingsStore()
+const authStore = new AuthStore()
 
 export default class AppContainer extends Component {
   constructor(props) {
@@ -17,7 +19,8 @@ export default class AppContainer extends Component {
       toggled: false,
       // will hold all of our data stores
       store: {
-        settings: settings
+        settings: settings,
+        auth: authStore
       },
       theme: theme   // over-arching theme file for native-base
     }
