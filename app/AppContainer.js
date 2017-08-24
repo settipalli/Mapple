@@ -7,6 +7,7 @@ import theme from './themes/theme'
 import SettingsStore from './stores/SettingsStore'
 import AuthStore from './stores/AuthStore'
 import SplashScene from './scenes/SplashScene'
+import LoginScene from './scenes/LoginScene'
 
 // instance of our settings store that would be passed around throught the app
 const settings = new SettingsStore()
@@ -47,6 +48,9 @@ export default class AppContainer extends Component {
     switch (route.title) {
       case 'Splash': {
         return <SplashScene {...route.passProps} navigator={navigator} />
+      }
+      case 'Login': {
+        return <LoginScene {...route.passProps} navigator={navigator} />
       }
       default: {
         return null

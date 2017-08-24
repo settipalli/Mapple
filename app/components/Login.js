@@ -13,6 +13,7 @@ import { observer } from 'mobx-react/native'
 // when the data changes.
 @observer export default class Login extends Component {
   constructor(props) {
+    super(props)
     this.state = {
       email: '',
       password: '',
@@ -47,25 +48,25 @@ import { observer } from 'mobx-react/native'
       // build the Login View
       <View theme={this.props.theme} >
         <InputGroup style={{ marginBottom: 10 }} borderType='round'>
-          <Icon style={{ color: '#fff' }} name='person-outline' />
+          <Icon style={{ color: '#fff' }} name='ios-person-outline' />
           <Input
             style={{ color: '#fff' }}
-            placeholder='you@something.com'
-            placeholderTextColor={{ color: '#fff' }}
+            placeholderText='you@something.com'
+            placeholderStyle={{ color: '#fff' }}
             onChangeText={(email) => { this.updateEmail(email) }}
           />
         </InputGroup>
         <InputGroup style={{ marginBottom: 10 }} borderType='round'>
-          <Icon style={{ color: '#fff' }} name='lock-open ' />
+          <Icon style={{ color: '#fff' }} name='ios-unlock' />
           <Input
             style={{ color: '#fff' }}
-            placeholder='password'
-            placeholderTextColor={{ color: '#fff' }}
+            placeholderText='password'
+            placeholderStyle={{ color: '#fff' }}
             secureTextEntry={true}
             onChangeText={(password) => { this.updatePassword(password) }}
           />
         </InputGroup>
-        <Button rounded block style={{ marginBottom: 10px}}
+        <Button rounded block style={{ marginBottom: 10}}
           onPress={this.signIn.bind(this)} >
           {Login}
         </Button>

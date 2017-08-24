@@ -13,8 +13,11 @@ export default class SettingsStore extends MobxFirebaseStore {
     super(firebase.database().ref())
 
     // now let us create our SettingsStore data that we would like to pass around to other parts of our application
-    this.splashTime = 3000  // 5000 milliseconds = 5 seconds
+    this.splashTime = 500  // 5000 milliseconds = 5 seconds
     this.splashImg = require('../../images/Splash.jpg')
+
+    // login
+    this.loginBackgroundImg = require('../../images/Login.jpg')
   }
 
   // accessors
@@ -24,5 +27,9 @@ export default class SettingsStore extends MobxFirebaseStore {
 
   get SplashImg() {
     return this.splashImg
+  }
+
+  get LoginBackgroundImg() {
+    return this.loginBackgroundImg
   }
 }
